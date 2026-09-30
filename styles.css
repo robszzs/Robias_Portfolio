@@ -1,4 +1,4 @@
-  :root {
+:root {
     --bg: #FFFFFF;
     --bg-soft: #F6F7F5;
     --ink: #1B1F1D;
@@ -145,28 +145,50 @@
   .toolkit-grid h4 { font-size: 0.95rem; font-weight: 600; font-family: "Public Sans", sans-serif; margin-bottom: 8px; }
   .toolkit-grid p { margin: 0; color: var(--muted); }
 
-  /* WORK */
-  .work-row {
-    display: grid;
-    grid-template-columns: 96px 1fr;
-    gap: 24px;
-    padding: 22px 0;
-    border-top: 1px solid var(--line);
-    align-items: start;
+  /* WORK — sideways looping carousel */
+  #work .wrap { padding-bottom: 0; }
+  .work-track-wrap {
+    overflow: hidden;
+    margin-top: 8px;
+    -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 48px, #000 calc(100% - 48px), transparent 100%);
+            mask-image: linear-gradient(90deg, transparent 0, #000 48px, #000 calc(100% - 48px), transparent 100%);
   }
-  .work-row:first-of-type { border-top: none; padding-top: 0; }
-  .work-mark {
-    width: 96px; height: 72px;
+  .work-track {
+    display: flex;
+    gap: 24px;
+    width: max-content;
+    padding: 4px 0 30px;
+    animation: work-scroll 34s linear infinite;
+  }
+  .work-track:hover { animation-play-state: paused; }
+  @keyframes work-scroll {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .work-track { animation: none; overflow-x: auto; padding-bottom: 4px; }
+  }
+  .work-card {
+    flex: 0 0 auto;
+    width: min(360px, 82vw);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 24px 26px;
+    background: var(--bg-soft);
+  }
+  .work-card .work-mark {
+    width: 44px; height: 44px;
     border-radius: 3px;
     background: var(--accent-soft);
     display: flex; align-items: center; justify-content: center;
     color: var(--accent);
     font-family: "Fraunces", serif;
-    font-size: 1.3rem;
+    font-size: 1.05rem;
+    margin-bottom: 16px;
   }
-  .work-row h3 { font-size: 1.1rem; font-weight: 500; margin-bottom: 6px; }
-  .work-row p { margin: 0; color: var(--muted); font-size: 0.95rem; max-width: 56ch; }
-  .work-tag { font-size: 0.78rem; color: var(--accent); margin-top: 8px; display: inline-block; }
+  .work-card h3 { font-size: 1.05rem; font-weight: 500; margin-bottom: 8px; }
+  .work-card p { margin: 0; color: var(--muted); font-size: 0.92rem; }
+  .work-tag { font-size: 0.78rem; color: var(--accent); margin-top: 10px; display: inline-block; }
 
   /* PROCESS */
   .process ol { list-style: none; margin: 0; padding: 0; }
@@ -177,23 +199,6 @@
   .process p { margin: 0; color: var(--muted); font-size: 0.95rem; max-width: 56ch; }
 
   /* CONTACT */
-  /* CONTACT */
-  .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: start; }
-  .contact-form { display: flex; flex-direction: column; gap: 6px; }
-  .contact-form label { font-size: 0.82rem; color: var(--muted); margin-top: 10px; }
-  .contact-form label:first-child { margin-top: 0; }
-  .contact-form input, .contact-form textarea {
-    font-family: "Public Sans", sans-serif;
-    font-size: 0.95rem;
-    color: var(--ink);
-    background: var(--bg-soft);
-    border: 1px solid var(--line);
-    border-radius: 3px;
-    padding: 10px 12px;
-    resize: vertical;
-  }
-  .contact-form input:focus, .contact-form textarea:focus { outline: none; border-color: var(--accent); }
-  .contact-form button { margin-top: 16px; align-self: flex-start; }
   footer.contact { padding: 64px 0 max(56px, env(safe-area-inset-bottom, 0px)); }
   footer.contact h2 { font-size: 1.8rem; margin-bottom: 16px; max-width: 16ch; }
   footer.contact p { color: var(--muted); max-width: 48ch; margin-bottom: 26px; }
@@ -212,6 +217,5 @@
     .about-photo { width: 96px; height: 96px; }
     .services-grid { grid-template-columns: 1fr; }
     .toolkit-grid { grid-template-columns: 1fr; }
-    .contact-grid { grid-template-columns: 1fr; }
     .navlinks { gap: 16px; }
   }
