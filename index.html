@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="no-js">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
@@ -18,6 +18,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
+<script>document.documentElement.className = "js";</script>
 </head>
 <body>
 
@@ -41,15 +42,15 @@
 <header class="hero" id="top">
   <div class="wrap hero-grid">
     <div class="hero-main">
-      <p class="eyebrow">Web developer &amp; virtual assistant</p>
-      <h1 class="headline">Websites built. Businesses supported.</h1>
-      <p class="lead">I'm Jenwille, a freelancer based in Pasig City. I design and build websites, then keep running the work behind them: updates, admin, scheduling and inbox management. That leaves you free to run the business.</p>
-      <div class="cta-row">
+      <p class="eyebrow hero-in" style="--d:0">Web developer &amp; virtual assistant</p>
+      <h1 class="headline"><span class="line"><span class="hero-in" style="--d:1">Websites built.</span></span> <span class="line"><span class="hero-in" style="--d:2">Businesses supported.</span></span></h1>
+      <p class="lead hero-in" style="--d:3">I'm Jenwille, a freelancer based in Pasig City. I design and build websites, then keep running the work behind them: updates, admin, scheduling and inbox management. That leaves you free to run the business.</p>
+      <div class="cta-row hero-in" style="--d:4">
         <a class="btn-primary" href="#work">See my work</a>
-        <a class="btn-secondary" href="mailto:robiasjenwille@gmail.com">Email me</a>
+        <a class="btn-secondary" href="#contact">Get in touch</a>
       </div>
     </div>
-    <aside class="status-panel" aria-label="Quick facts">
+    <aside class="status-panel hero-in" style="--d:5" aria-label="Quick facts">
       <div class="status-row"><span class="dot" aria-hidden="true"></span> Available for new projects</div>
       <dl>
         <div><dt>Based in</dt><dd>Pasig City, PH · Remote</dd></div>
@@ -63,12 +64,12 @@
 
 <section id="work" aria-labelledby="work-title">
   <div class="wrap">
-    <div class="section-head">
+    <div class="section-head" data-reveal>
       <h2 id="work-title">Selected work</h2>
       <p>Apps I've designed and shipped, plus samples of my admin work.</p>
     </div>
 
-    <article class="case">
+    <article class="case" data-reveal>
       <a class="case-media" href="https://sidequest-five-delta.vercel.app/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
         <img src="sidequest-full.jpg" alt="" width="600" height="376" loading="lazy">
       </a>
@@ -87,7 +88,7 @@
       </div>
     </article>
 
-    <article class="case">
+    <article class="case" data-reveal>
       <a class="case-media" href="https://balikgamit.streamlit.app/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
         <img src="balikgamit-full.jpg" alt="" width="600" height="251" loading="lazy">
       </a>
@@ -106,15 +107,15 @@
       </div>
     </article>
 
-    <article class="case">
+    <article class="case" data-reveal>
       <a class="case-media sheet-mock" href="https://docs.google.com/spreadsheets/d/1KCQgEt2VsW5xtti5cFBzLwRbOoqXuT94/edit?usp=sharing" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
         <div class="sheet">
-          <div class="sheet-row sheet-head"><span>Item</span><span>Last</span><span>Now</span><span>Change</span></div>
-          <div class="sheet-row"><span>Rice, 25kg</span><span>1,250</span><span>1,310</span><span class="up">▲ 4.8%</span></div>
-          <div class="sheet-row"><span>Cooking oil</span><span>185</span><span>179</span><span class="down">▼ 3.2%</span></div>
-          <div class="sheet-row"><span>Sugar, 1kg</span><span>92</span><span>92</span><span>—</span></div>
-          <div class="sheet-row"><span>Eggs, tray</span><span>240</span><span>255</span><span class="up">▲ 6.3%</span></div>
-          <div class="sheet-row sheet-total"><span>Total</span><span>1,767</span><span>1,836</span><span class="up">▲ 3.9%</span></div>
+          <div class="sheet-row sheet-head" style="--r:0"><span>Item</span><span>Last</span><span>Now</span><span>Change</span></div>
+          <div class="sheet-row" style="--r:1"><span>Rice, 25kg</span><span>1,250</span><span>1,310</span><span class="up">▲ 4.8%</span></div>
+          <div class="sheet-row" style="--r:2"><span>Cooking oil</span><span>185</span><span>179</span><span class="down">▼ 3.2%</span></div>
+          <div class="sheet-row" style="--r:3"><span>Sugar, 1kg</span><span>92</span><span>92</span><span>—</span></div>
+          <div class="sheet-row" style="--r:4"><span>Eggs, tray</span><span>240</span><span>255</span><span class="up">▲ 6.3%</span></div>
+          <div class="sheet-row sheet-total" style="--r:5"><span>Total</span><span>1,767</span><span>1,836</span><span class="up">▲ 3.9%</span></div>
         </div>
       </a>
       <div class="case-body">
@@ -136,12 +137,12 @@
 
 <section id="services" aria-labelledby="services-title">
   <div class="wrap">
-    <div class="section-head">
+    <div class="section-head" data-reveal>
       <h2 id="services-title">What I do</h2>
       <p>One person for the website and the work around it.</p>
     </div>
     <div class="services-grid">
-      <div class="service">
+      <div class="service" data-reveal>
         <h3>Web development</h3>
         <ul>
           <li>Responsive websites on WordPress and Wix, or hand-coded</li>
@@ -150,7 +151,7 @@
           <li>Basic SEO setup and page speed cleanup</li>
         </ul>
       </div>
-      <div class="service">
+      <div class="service" data-reveal>
         <h3>Virtual assistance</h3>
         <ul>
           <li>Inbox, calendar and scheduling management</li>
@@ -161,7 +162,7 @@
       </div>
     </div>
 
-    <div class="toolkit">
+    <div class="toolkit" data-reveal>
       <h3 class="toolkit-title">Toolkit</h3>
       <dl class="toolkit-grid">
         <div><dt>Build</dt><dd>HTML · CSS · JavaScript · React · Python · Streamlit · MySQL</dd></div>
@@ -175,19 +176,19 @@
 
 <section class="process" aria-labelledby="process-title">
   <div class="wrap">
-    <div class="section-head">
+    <div class="section-head" data-reveal>
       <h2 id="process-title">How I work</h2>
     </div>
     <ol>
-      <li><span class="num">01</span><div><h3>Discover</h3><p>A short call to learn your goals, the tools you already use and where the day-to-day work is piling up.</p></div></li>
-      <li><span class="num">02</span><div><h3>Build or organize</h3><p>I design and build the site, or I set up the systems and routines that keep things running.</p></div></li>
-      <li><span class="num">03</span><div><h3>Launch and support</h3><p>After launch I stay on for updates, admin and the ongoing tasks that keep it moving.</p></div></li>
+      <li data-reveal style="--d:0"><span class="num">01</span><div><h3>Discover</h3><p>A short call to learn your goals, the tools you already use and where the day-to-day work is piling up.</p></div></li>
+      <li data-reveal style="--d:1"><span class="num">02</span><div><h3>Build or organize</h3><p>I design and build the site, or I set up the systems and routines that keep things running.</p></div></li>
+      <li data-reveal style="--d:2"><span class="num">03</span><div><h3>Launch and support</h3><p>After launch I stay on for updates, admin and the ongoing tasks that keep it moving.</p></div></li>
     </ol>
   </div>
 </section>
 
 <section id="about" aria-labelledby="about-title">
-  <div class="wrap about-grid">
+  <div class="wrap about-grid" data-reveal>
     <img class="about-photo" src="photo.jpg" alt="Portrait of Jenwille John V. Robias" width="480" height="480" loading="lazy">
     <div>
       <h2 id="about-title">About me</h2>
@@ -206,34 +207,25 @@
 
 <footer class="contact" id="contact">
   <div class="wrap">
-    <h2>Let's work together</h2>
+    <h2 data-reveal>Let's work together</h2>
     <p>Got a site to build or a workload to hand off? Tell me about it. I reply within 24 hours.</p>
-    <div class="contact-row">
-      <a class="contact-email" href="mailto:robiasjenwille@gmail.com">robiasjenwille@gmail.com</a>
-      <button class="copy-btn" type="button" data-copy="robiasjenwille@gmail.com">Copy</button>
+    <div class="contact-row" data-reveal>
+      <button class="contact-email" type="button" data-copy="robiasjenwille@gmail.com" aria-label="Copy email address robiasjenwille@gmail.com">robiasjenwille@gmail.com <span class="copy-hint" aria-hidden="true">Click to copy</span></button>
+    </div>
+    <div class="email-options" data-reveal>
+      <a class="btn-primary" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=robiasjenwille@gmail.com" target="_blank" rel="noopener">Write in Gmail ↗</a>
+      <a class="btn-secondary" href="mailto:robiasjenwille@gmail.com">Open my mail app</a>
     </div>
     <div class="contact-links">
       <a href="resume.pdf" download="Jenwille_John_Robias_Resume.pdf">Download résumé (PDF)</a>
       <a href="https://github.com/robszzs" target="_blank" rel="noopener">GitHub ↗</a>
       <a href="https://www.facebook.com/robzz04" target="_blank" rel="noopener">Facebook ↗</a>
     </div>
+    <div class="toast" role="status" aria-live="polite"></div>
     <p class="fine">© <span id="year">2026</span> Jenwille John V. Robias</p>
   </div>
 </footer>
 
-<script>
-  document.getElementById('year').textContent = new Date().getFullYear();
-  document.querySelectorAll('.copy-btn').forEach(function (btn) {
-    btn.addEventListener('click', function () {
-      var done = function () {
-        btn.textContent = 'Copied';
-        setTimeout(function () { btn.textContent = 'Copy'; }, 1800);
-      };
-      try {
-        navigator.clipboard.writeText(btn.dataset.copy).then(done, function () {});
-      } catch (e) {}
-    });
-  });
-</script>
+<script src="main.js" defer></script>
 </body>
 </html>
