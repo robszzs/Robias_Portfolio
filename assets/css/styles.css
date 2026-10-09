@@ -75,6 +75,73 @@
   }
   .skip-link:focus { top: 12px; }
 
+  /* INTRO LOADER */
+  .loader { display: none; }
+  .is-loading, .is-loading body { overflow: hidden; }
+  .is-loading .loader {
+    display: block;
+    position: fixed;
+    inset: 0;
+    z-index: 200;
+    background: var(--accent);
+    transition: transform .7s cubic-bezier(.7,0,.2,1) .15s;
+    /* Failsafe: never cover the page if the script doesn't run */
+    animation: loader-failsafe 0s linear 5s forwards;
+  }
+  .loader-panel {
+    position: absolute;
+    inset: 0;
+    display: grid;
+    place-items: center;
+    background: var(--bg);
+    transition: transform .7s cubic-bezier(.7,0,.2,1);
+  }
+  .is-leaving .loader, .is-leaving .loader-panel { transform: translateY(-100%); }
+  .loader-inner { display: grid; justify-items: center; gap: 14px; transition: opacity .3s, transform .5s; }
+  .is-leaving .loader-inner { opacity: 0; transform: translateY(-16px); }
+  /* Walking cat: crosses the track while the line fills behind it */
+  .loader-track { position: relative; width: 240px; padding-top: 46px; }
+  .cat-walker {
+    position: absolute;
+    left: 0; top: 0;
+    animation: cat-cross 1.6s linear both;
+  }
+  .cat { display: block; overflow: visible; }
+  .cat-bob { fill: var(--ink); animation: cat-bob .25s ease-in-out infinite alternate; }
+  .cat-eye { fill: var(--bg); }
+  .cat-tail { fill: none; stroke: var(--ink); stroke-width: 4.5; stroke-linecap: round; transform-origin: 25px 33px; animation: cat-tail .5s ease-in-out infinite alternate; }
+  .leg { stroke: var(--ink); stroke-width: 5.5; stroke-linecap: round; animation: cat-step .5s ease-in-out infinite alternate; }
+  .leg-far { stroke: var(--muted); }
+  .leg-b { animation-delay: -.5s; }
+  .leg[x1="31"] { transform-origin: 31px 40px; }
+  .leg[x1="36"] { transform-origin: 36px 40px; }
+  .leg[x1="59"] { transform-origin: 59px 40px; }
+  .leg[x1="64"] { transform-origin: 64px 40px; }
+  @keyframes cat-cross { from { transform: translateX(-8px); } to { transform: translateX(176px); } }
+  @keyframes cat-step { from { transform: rotate(24deg); } to { transform: rotate(-24deg); } }
+  @keyframes cat-bob { from { transform: translateY(0); } to { transform: translateY(-1.6px); } }
+  @keyframes cat-tail { from { transform: rotate(-8deg); } to { transform: rotate(10deg); } }
+  .loader-name {
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--muted);
+    animation: rise .7s cubic-bezier(.2,.7,.2,1) .35s both;
+  }
+  .loader-bar { display: block; width: 100%; height: 2px; background: var(--line); border-radius: 2px; overflow: hidden; }
+  .loader-bar span {
+    display: block;
+    height: 100%;
+    background: var(--accent);
+    animation: loader-fill 1.6s linear both;
+  }
+  /* Matches the cat's back paws so the line is drawn behind it */
+  @keyframes loader-fill { from { width: 14px; } to { width: 198px; } }
+  @keyframes loader-failsafe { to { visibility: hidden; opacity: 0; } }
+  /* Hold the hero entrance until the loader lifts */
+  .is-loading:not(.is-leaving) .hero-in { animation-play-state: paused; }
+
   /* NAV */
   nav.topnav {
     position: sticky;

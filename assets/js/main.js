@@ -1,6 +1,24 @@
 (function () {
   var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+  // Intro loader: hold for a moment, then lift it once the page has loaded
+  var root = document.documentElement;
+  if (root.classList.contains('is-loading')) {
+    var started = Date.now();
+    var finished = false;
+    var finish = function () {
+      if (finished) return;
+      finished = true;
+      setTimeout(function () {
+        root.classList.add('is-leaving');
+        setTimeout(function () { root.classList.remove('is-loading', 'is-leaving'); }, 950);
+      }, Math.max(0, 1750 - (Date.now() - started)));
+    };
+    if (document.readyState === 'complete') finish();
+    else window.addEventListener('load', finish);
+    setTimeout(finish, 3000);
+  }
+
   document.getElementById('year').textContent = new Date().getFullYear();
 
   // Fade sections in as they scroll into view
