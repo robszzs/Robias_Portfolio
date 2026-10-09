@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://robias-porfolio.vercel.app/sitemap.xml

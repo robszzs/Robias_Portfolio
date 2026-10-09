@@ -67,6 +67,42 @@
     document.body.removeChild(ta);
     return ok;
   };
+  // Contact form: send through Web3Forms, or fall back to a pre-filled email
+  var form = document.querySelector('.contact-form');
+  if (form) {
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var data = new FormData(form);
+      var key = data.get('access_key');
+      var btn = form.querySelector('button[type="submit"]');
+
+      if (!key || key.indexOf('YOUR_') === 0 || !window.fetch) {
+        var body = data.get('message') + '\n\n— ' + data.get('name') + ' (' + data.get('email') + ')';
+        window.location.href = 'mailto:robiasjenwille@gmail.com?subject=' +
+          encodeURIComponent('Project inquiry from ' + data.get('name')) +
+          '&body=' + encodeURIComponent(body);
+        return;
+      }
+
+      btn.disabled = true;
+      btn.textContent = 'Sending…';
+      fetch(form.action, { method: 'POST', body: data, headers: { Accept: 'application/json' } })
+        .then(function (res) { return res.json(); })
+        .then(function (json) {
+          if (!json.success) throw new Error(json.message);
+          form.reset();
+          showToast('Thanks! Your message was sent. I’ll reply within 24 hours.');
+        })
+        .catch(function () {
+          showToast('Couldn’t send. Please email robiasjenwille@gmail.com instead.');
+        })
+        .then(function () {
+          btn.disabled = false;
+          btn.textContent = 'Send message';
+        });
+    });
+  }
+
   document.querySelectorAll('[data-copy]').forEach(function (btn) {
     btn.addEventListener('click', function () {
       var text = btn.dataset.copy;

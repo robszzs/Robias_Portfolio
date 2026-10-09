@@ -11,8 +11,32 @@
 <meta property="og:title" content="Jenwille John V. Robias — Web Developer &amp; Virtual Assistant">
 <meta property="og:description" content="Websites built. Businesses supported. Freelance web development and virtual assistance, remote from Pasig City, PH.">
 <meta property="og:url" content="https://robias-porfolio.vercel.app/">
-<meta property="og:image" content="https://robias-porfolio.vercel.app/assets/images/photo.jpg">
-<meta name="twitter:card" content="summary">
+<link rel="canonical" href="https://robias-porfolio.vercel.app/">
+<meta property="og:site_name" content="Jenwille Robias">
+<meta property="og:locale" content="en_PH">
+<meta property="og:image" content="https://robias-porfolio.vercel.app/assets/images/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Jenwille John V. Robias — Websites built. Businesses supported.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Jenwille John V. Robias — Web Developer &amp; Virtual Assistant">
+<meta name="twitter:description" content="Websites built. Businesses supported. Freelance web development and virtual assistance, remote from Pasig City, PH.">
+<meta name="twitter:image" content="https://robias-porfolio.vercel.app/assets/images/og-image.jpg">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Jenwille John V. Robias",
+  "jobTitle": "Web Developer & Virtual Assistant",
+  "url": "https://robias-porfolio.vercel.app/",
+  "image": "https://robias-porfolio.vercel.app/assets/images/photo.jpg",
+  "email": "mailto:robiasjenwille@gmail.com",
+  "address": { "@type": "PostalAddress", "addressLocality": "Pasig City", "addressCountry": "PH" },
+  "alumniOf": { "@type": "CollegeOrUniversity", "name": "Rizal Technological University" },
+  "knowsAbout": ["Web development", "WordPress", "Wix", "JavaScript", "Python", "Virtual assistance", "Google Sheets"],
+  "sameAs": ["https://github.com/robszzs", "https://www.facebook.com/robzz04"]
+}
+</script>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%233D6B5C'/%3E%3Ctext x='32' y='43' font-family='Georgia,serif' font-size='30' fill='%23fff' text-anchor='middle'%3EJR%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -203,12 +227,48 @@
   </div>
 </section>
 
+<!-- Testimonials: uncomment once you have real quotes (classmates, teammates, clients).
+<section id="testimonials" aria-labelledby="testimonials-title">
+  <div class="wrap">
+    <div class="section-head" data-reveal>
+      <h2 id="testimonials-title">Kind words</h2>
+    </div>
+    <div class="quotes">
+      <figure class="quote" data-reveal>
+        <blockquote>"Quote goes here."</blockquote>
+        <figcaption><strong>Name</strong> · Role, Company</figcaption>
+      </figure>
+      <figure class="quote" data-reveal style="--d:1">
+        <blockquote>"Quote goes here."</blockquote>
+        <figcaption><strong>Name</strong> · Role, Company</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+-->
+
 </main>
 
 <footer class="contact" id="contact">
   <div class="wrap">
     <h2 data-reveal>Let's work together</h2>
     <p>Got a site to build or a workload to hand off? Tell me about it. I reply within 24 hours.</p>
+
+    <form class="contact-form" data-reveal action="https://api.web3forms.com/submit" method="POST">
+      <!-- Get a free key at https://web3forms.com (enter robiasjenwille@gmail.com) and paste it here.
+           Until then, the form opens a pre-filled email instead. -->
+      <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_ACCESS_KEY">
+      <input type="hidden" name="subject" value="New message from your portfolio">
+      <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <div class="field-row">
+        <label>Name<input type="text" name="name" autocomplete="name" required></label>
+        <label>Email<input type="email" name="email" autocomplete="email" required></label>
+      </div>
+      <label>What do you need help with?<textarea name="message" rows="5" required></textarea></label>
+      <button class="btn-primary" type="submit">Send message</button>
+    </form>
+
+    <p class="or-email" data-reveal>Or email me directly:</p>
     <div class="contact-row" data-reveal>
       <button class="contact-email" type="button" data-copy="robiasjenwille@gmail.com" aria-label="Copy email address robiasjenwille@gmail.com">robiasjenwille@gmail.com <span class="copy-hint" aria-hidden="true">Click to copy</span></button>
     </div>
@@ -227,5 +287,7 @@
 </footer>
 
 <script src="assets/js/main.js" defer></script>
+<!-- Vercel Web Analytics: turn it on in the Vercel dashboard (Project → Analytics) -->
+<script defer src="/_vercel/insights/script.js"></script>
 </body>
 </html>
